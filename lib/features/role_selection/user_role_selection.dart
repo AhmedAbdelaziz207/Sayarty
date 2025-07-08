@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sayaraty/core/routing/app_router.dart';
 import 'package:sayaraty/core/theme/app_colors.dart';
 import 'package:sayaraty/core/theme/app_text_styles.dart';
 
@@ -62,16 +63,17 @@ class _UserRoleSelectionState extends State<UserRoleSelection> {
               SizedBox(height: 120.h),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  minimumSize:  Size(300.w, 58.h),
+                  minimumSize: Size(300.w, 58.h),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
 
-                onPressed: () {
-                  // Navigate to the next screen or perform any desired action
+                onPressed: selectedRole == null ? null : () {
+
+                    Navigator.pushNamed(context, AppRouter.login);
                 },
-                child:  Text("next".tr(),style: AppTextStyles.button16White,),
+                child: Text("next".tr(), style: AppTextStyles.button16White),
               ),
             ],
           ),
@@ -97,7 +99,7 @@ class _UserRoleSelectionState extends State<UserRoleSelection> {
           color: AppColors.white,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: isSelected ? AppColors.primary : AppColors.gray,
+            color: isSelected ? AppColors.primaryColor : AppColors.gray,
             width: 2,
           ),
         ),
@@ -107,13 +109,13 @@ class _UserRoleSelectionState extends State<UserRoleSelection> {
               imagePath,
               width: 60,
               height: 60,
-              color: isSelected ? AppColors.primary : AppColors.gray,
+              color: isSelected ? AppColors.primaryColor : AppColors.gray,
             ),
             SizedBox(height: 12.h),
             Text(
               title,
               style: AppTextStyles.body14Bold.copyWith(
-                color: isSelected ? AppColors.primary : AppColors.gray,
+                color: isSelected ? AppColors.primaryColor : AppColors.gray,
               ),
             ),
           ],

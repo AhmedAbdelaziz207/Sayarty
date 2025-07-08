@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sayaraty/core/theme/app_colors.dart';
 import 'package:sayaraty/core/theme/app_text_styles.dart';
+import 'package:sayaraty/features/onboarding/second_onboarding_screen.dart';
 
 import '../../core/routing/app_router.dart';
 
@@ -54,9 +55,23 @@ class FirstOnboardingScreen extends StatelessWidget {
                     height: 58.h,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamed(
+                        Navigator.push(
                           context,
-                          AppRouter.secondOnboarding,
+                          PageRouteBuilder(
+                            transitionDuration: const Duration(milliseconds: 500),
+                            pageBuilder: (context, animation, secondaryAnimation) => const SecondOnboardingScreen(),
+                            transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                              final offsetTween = Tween<Offset>(
+                                begin: const Offset(1.0, 0.0),
+                                end: Offset.zero,
+                              ).chain(CurveTween(curve: Curves.easeInOut));
+
+                              return SlideTransition(
+                                position: animation.drive(offsetTween),
+                                child: child,
+                              );
+                            },
+                          ),
                         );
                       },
                       style: ElevatedButton.styleFrom(

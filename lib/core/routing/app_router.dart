@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:sayaraty/features/landing/landing_screen.dart';
+import 'package:sayaraty/features/login/ui/login_complete.dart';
+import 'package:sayaraty/features/login/ui/login_screen.dart';
 import 'package:sayaraty/features/onboarding/second_onboarding_screen.dart';
 import '../../features/language_selection/select_language_screen.dart';
+import '../../features/login/ui/login_success_screen.dart';
 import '../../features/onboarding/first_onboarding_screen.dart';
 import '../../features/role_selection/user_role_selection.dart';
 import '../../features/splash/splash_screen.dart';
@@ -21,9 +25,16 @@ class AppRouter {
       case home:
         return MaterialPageRoute(builder: (_) => const Text("Home"));
       case landing:
-        return MaterialPageRoute(builder: (_) => const Text("Home"));
+        return MaterialPageRoute(builder: (_) => const LandingScreen());
       case login:
-        return MaterialPageRoute(builder: (_) => const Text("Home"));
+        return MaterialPageRoute(builder: (_) => LoginScreen());
+      case loginComplete:
+        final phone = settings.arguments as String;
+        return MaterialPageRoute(
+          builder: (_) => LoginCompleteScreen(phoneNumber: phone),
+        );
+      case loginSuccess:
+        return MaterialPageRoute(builder: (_) => LoginSuccessScreen());
       case register:
         return MaterialPageRoute(builder: (_) => const Text("Home"));
       case forgotPassword:
@@ -46,6 +57,8 @@ class AppRouter {
 
   static const home = '/';
   static const login = '/login';
+  static const loginComplete = '/login-complete';
+  static const loginSuccess = '/login-success';
   static const register = '/register';
   static const forgotPassword = '/forgot-password';
   static const resetPassword = '/reset-password';

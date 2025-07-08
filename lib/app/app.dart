@@ -19,13 +19,16 @@ class App extends StatelessWidget {
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,
+
           initialRoute: AppRouter.splash,
-          theme:  ThemeData(
+          theme: ThemeData(
+            useMaterial3: false,
             primarySwatch: Colors.deepOrange,
             elevatedButtonTheme: ElevatedButtonThemeData(
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.black,
-                textStyle:  TextStyle(
+
+                textStyle: TextStyle(
                   fontSize: 16.sp,
                   fontWeight: FontWeight.bold,
                   color: AppColors.white,
@@ -34,7 +37,7 @@ class App extends StatelessWidget {
                   borderRadius: BorderRadius.circular(28.sp),
                 ),
               ),
-            )
+            ),
           ),
           onGenerateRoute: AppRouter.onGenerateRoute,
         );

@@ -7,7 +7,7 @@ class AppTextStyles {
   static TextStyle heading24BoldPrimary = GoogleFonts.tajawal(
     fontSize: 24.sp,
     fontWeight: FontWeight.bold,
-    color: AppColors.primary, // primary
+    color: AppColors.primaryColor, // primary
   );
 
   static TextStyle heading20BoldBlack = GoogleFonts.tajawal(
