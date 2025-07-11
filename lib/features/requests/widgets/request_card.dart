@@ -4,10 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sayaraty/core/widgets/custom_dialog.dart';
 
-import '../../core/theme/app_colors.dart';
-import '../../core/theme/app_text_styles.dart';
-import '../../core/utils/app_assets.dart';
-import '../../core/utils/app_local_keys.dart';
+import '../../../core/theme/app_colors.dart';
+import '../../../core/theme/app_text_styles.dart';
+import '../../../core/utils/app_assets.dart';
+import '../../../core/utils/app_local_keys.dart';
 
 class RequestCard extends StatelessWidget {
   const RequestCard({super.key});

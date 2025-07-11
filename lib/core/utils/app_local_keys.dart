@@ -19,10 +19,19 @@ class AppLocalKeys {
   static const lastName = "اللقب";
   static const phone = " الهاتف";
   static const pleaseCompleteTheForm = "من فضلك اكمل ادخال البيانات";
-  static const fillDataToContinue = "املئ البيانات لتتمكن من الدخول الي التطبيق";
+  static const fillDataToContinue =
+      "املئ البيانات لتتمكن من الدخول الي التطبيق";
   static const save = "حفظ";
-  // Requests
+  static const selectProfileImage = "اختر صورة الملف الشخصي";
 
+  // Select Role
+
+  static const areYouUserOrTechnical = "هل انت مستخدم ام فني ؟";
+  static const user = "مستخدم";
+  static const technical = "فني";
+  static const next = "التالي";
+
+  // Requests
 
   static const requests = "الطلبات";
   static const requestDetails = "تفاصيل الطلب";
@@ -36,5 +45,7 @@ class AppLocalKeys {
   static const currentRequests = "الطلبات الحالية";
   static const pastRequests = "الطلبات السابقة";
 
+  static const fieldRequired = "الحقل مطلوب";
 
+  static const inputPassword = "ادخل كلمة المرور";
 }

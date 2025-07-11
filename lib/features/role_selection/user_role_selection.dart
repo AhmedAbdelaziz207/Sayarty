@@ -4,6 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sayaraty/core/routing/app_router.dart';
 import 'package:sayaraty/core/theme/app_colors.dart';
 import 'package:sayaraty/core/theme/app_text_styles.dart';
+import 'package:sayaraty/core/utils/app_local_keys.dart';
+import 'package:sayaraty/core/utils/constants.dart';
+import 'package:sayaraty/core/utils/pref_manager.dart';
 
 import '../../core/utils/app_assets.dart';
 
@@ -41,7 +44,7 @@ class _UserRoleSelectionState extends State<UserRoleSelection> {
             children: [
               SizedBox(height: 120.h),
               Text(
-                "هل أنت مستخدم أم فني ؟",
+                AppLocalKeys.areYouUserOrTechnical.tr(),
                 style: AppTextStyles.heading20BoldBlack,
               ),
               SizedBox(height: 120.h),
@@ -50,13 +53,13 @@ class _UserRoleSelectionState extends State<UserRoleSelection> {
                 children: [
                   buildRoleSelection(
                     "assets/images/tech.png",
-                    "فني",
-                    isSelected: selectedRole == "فني",
+                    AppLocalKeys.technical.tr(),
+                    isSelected: selectedRole == AppLocalKeys.technical.tr(),
                   ),
                   buildRoleSelection(
                     "assets/images/user.png",
-                    "مستخدم",
-                    isSelected: selectedRole == "مستخدم",
+                    AppLocalKeys.user.tr(),
+                    isSelected: selectedRole == AppLocalKeys.user.tr(),
                   ),
                 ],
               ),
@@ -69,11 +72,21 @@ class _UserRoleSelectionState extends State<UserRoleSelection> {
                   ),
                 ),
 
-                onPressed: selectedRole == null ? null : () {
+                onPressed:
+                    selectedRole == null
+                        ? null
+                        : () async {
+                          await PrefManager.setData(
+                            Constants.role,
+                            selectedRole == AppLocalKeys.technical.tr()? "technical" : "user",
+                          );
 
-                    Navigator.pushNamed(context, AppRouter.login);
-                },
-                child: Text("next".tr(), style: AppTextStyles.button16White),
+                          Navigator.pushNamed(context, AppRouter.login);
+                        },
+                child: Text(
+                  AppLocalKeys.next.tr(),
+                  style: AppTextStyles.button16White,
+                ),
               ),
             ],
           ),

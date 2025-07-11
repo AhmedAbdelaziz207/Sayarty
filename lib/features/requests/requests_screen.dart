@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sayaraty/core/theme/app_colors.dart';
 import 'package:sayaraty/core/theme/app_text_styles.dart';
 import 'package:sayaraty/core/utils/app_local_keys.dart';
-import 'package:sayaraty/features/requests/request_card.dart';
+import 'package:sayaraty/features/requests/widgets/request_card.dart';
 
 class RequestsScreen extends StatefulWidget {
   const RequestsScreen({super.key});

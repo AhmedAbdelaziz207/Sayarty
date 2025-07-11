@@ -941,6 +941,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.1.1"
+  loader:
+    dependency: "direct main"
+    description:
+      name: loader
+      sha256: "65848ea3bffb88766a2bd13cf68034b97a3d8cc34eb159daed5d4929135cef49"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   logging:
     dependency: transitive
     description:
@@ -949,6 +957,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.0"
+  lottie:
+    dependency: "direct main"
+    description:
+      name: lottie
+      sha256: c5fa04a80a620066c15cf19cc44773e19e9b38e989ff23ea32e5903ef1015950
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.3.1"
   matcher:
     dependency: transitive
     description:
@@ -1069,6 +1085,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.0"
+  place_picker_google:
+    dependency: "direct main"
+    description:
+      name: place_picker_google
+      sha256: dcd8dc0acec56441d76a7c85b9c627c7777757d2dd6fcb315473a4712adb3d9a
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.18"
   platform:
     dependency: transitive
     description:
@@ -1531,7 +1555,7 @@ packages:
     source: hosted
     version: "2.1.4"
   vibration:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: vibration
       sha256: "06588a845a4ebc73ab7ff7da555c2b3dbcd9676164b5856a38bf0b2287f1045d"

@@ -67,6 +67,10 @@ dependencies:
   intl_phone_field: ^3.2.0
   google_maps_flutter: ^2.12.2
   slider_button: ^2.1.0
+  place_picker_google: ^0.0.18
+  loader: ^1.0.0
+  lottie: ^3.3.1
+  vibration: ^1.9.0
 
 dev_dependencies:
   flutter_test:
@@ -123,5 +127,6 @@ flutter:
   # see https://flutter.dev/to/font-from-package
   assets:
     - assets/images/
+    - assets/animation/
     - assets/icons/
     - assets/translations/

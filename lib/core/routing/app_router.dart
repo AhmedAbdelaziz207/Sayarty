@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sayaraty/features/landing/landing_screen.dart';
+import 'package:sayaraty/features/login/logic/login_cubit.dart';
 import 'package:sayaraty/features/login/ui/login_complete.dart';
 import 'package:sayaraty/features/login/ui/login_screen.dart';
 import 'package:sayaraty/features/onboarding/second_onboarding_screen.dart';
@@ -27,11 +29,21 @@ class AppRouter {
       case landing:
         return MaterialPageRoute(builder: (_) => const LandingScreen());
       case login:
-        return MaterialPageRoute(builder: (_) => LoginScreen());
+        return MaterialPageRoute(
+          builder:
+              (_) => BlocProvider(
+                create: (context) => LoginCubit(),
+                child: LoginScreen(),
+              ),
+        );
       case loginComplete:
         final phone = settings.arguments as String;
         return MaterialPageRoute(
-          builder: (_) => LoginCompleteScreen(phoneNumber: phone),
+          builder:
+              (_) => BlocProvider(
+                create: (context) => LoginCubit(),
+                child: LoginCompleteScreen(phoneNumber: phone),
+              ),
         );
       case loginSuccess:
         return MaterialPageRoute(builder: (_) => LoginSuccessScreen());

@@ -33,7 +33,7 @@ class ApiErrorHandler {
     try {
       final Map<String, dynamic> data = response.data;
       return ApiErrorModel(
-        message: data['message'],
+        message: data['msg'],
         statusCode: data['statusCode'],
         errors: data['errors'],
       );

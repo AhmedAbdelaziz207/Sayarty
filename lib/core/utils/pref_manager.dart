@@ -1,8 +1,14 @@
+import 'dart:developer';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PrefManager {
   static Future<bool> setData(String key, dynamic value) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    log("Set Data key: $key, value: $value");
+
+
     switch (value.runtimeType) {
       case String:
         return await prefs.setString(key, value);
